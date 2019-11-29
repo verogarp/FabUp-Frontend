@@ -2,7 +2,7 @@
   "name": "nuxt-express",
   "version": "1.0.0",
   "description": "Reboot Final Project Template",
-  "author": "Fer Martin",
+  "author": "Vero",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon -r esm server/index.js --watch server",
