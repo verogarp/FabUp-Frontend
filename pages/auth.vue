@@ -1,5 +1,5 @@
 <template>
-  <div class="initial-page">
+  <div>
     <WelcomeTemplate>
       <template slot="upper">
         <Logo></Logo>
@@ -25,13 +25,9 @@ export default {
     return {
       tab: null
     }
-  }
+  },
+  layout: 'withoutNavigationBar'
 }
 </script>
 
-<style scoped lang="scss">
-.initial-page {
-  background-color: $fabup-yellow;
-  height: 100%;
-}
-</style>
+<style scoped lang="scss"></style>
