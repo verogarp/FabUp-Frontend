@@ -18,7 +18,14 @@ module.exports = {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        href:
+          'https://fonts.googleapis.com/css?family=Ibarra+Real+Nova|Roboto&display=swap',
+        rel: 'stylesheet'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color

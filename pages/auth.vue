@@ -1,33 +1,26 @@
 <template>
-  <v-row align="center" justify="center">
-    <v-col cols="12" md="6">
-      <v-tabs v-model="tab">
-        <v-tab key="1" :href="`#tab-1`">Signup</v-tab>
-        <v-tab key="2" :href="`#tab-2`">Login</v-tab>
-        <v-tab-item key="1" value="tab-1">
-          <v-row class="py-7">
-            <v-col>
-              <Signup />
-            </v-col>
-          </v-row>
-        </v-tab-item>
-        <v-tab-item key="2" value="tab-2">
-          <v-row class="py-7">
-            <v-col>
-              <Login />
-            </v-col>
-          </v-row>
-        </v-tab-item>
-      </v-tabs>
-    </v-col>
-  </v-row>
+  <div class="initial-page">
+    <WelcomeTemplate>
+      <template slot="upper">
+        <Logo></Logo>
+      </template>
+      <template slot="mid">
+        <WelcomeMessage></WelcomeMessage>
+      </template>
+      <template slot="lower">
+        <LoginInteraction></LoginInteraction>
+      </template>
+    </WelcomeTemplate>
+  </div>
 </template>
 
 <script>
-import Login from '~/components/Login'
-import Signup from '~/components/Signup'
+import Logo from '~/components/molecules/Logo'
+import WelcomeMessage from '~/components/molecules/WelcomeMessage'
+import LoginInteraction from '~/components/molecules/LoginInteraction'
+import WelcomeTemplate from '~/components/templates/WelcomeTemplate'
 export default {
-  components: { Login, Signup },
+  components: { Logo, WelcomeMessage, LoginInteraction, WelcomeTemplate },
   data() {
     return {
       tab: null
@@ -36,4 +29,9 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.initial-page {
+  background-color: $fabup-yellow;
+  height: 100%;
+}
+</style>
