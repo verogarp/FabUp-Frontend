@@ -67,7 +67,15 @@ module.exports = {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: false
+      dark: false,
+      themes: {
+        light: {
+          primary: '#f9a825',
+          secondary: '#b0bec5',
+          accent: '#8c9eff',
+          error: '#b71c1c'
+        }
+      }
     }
   },
   /*
