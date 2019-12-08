@@ -3,30 +3,39 @@
     <nuxt />
     <div class="text-center mb-2"></div>
 
-    <v-bottom-navigation v-model="activeBtn" color="indigo" fixed>
-      <v-spacer />
+    <v-bottom-navigation
+      style="background: #f9a825"
+      color="white"
+      :value="activeBtn"
+      grow
+      fixed
+    >
       <v-btn>
-        <span>Favorites</span>
+        <span>Recents</span>
         <v-icon>mdi-heart</v-icon>
       </v-btn>
-      <v-spacer />
-      <v-btn>
-        <span>Ads</span>
-        <v-icon>mdi-post</v-icon>
-      </v-btn>
-      <v-spacer />
 
       <v-btn>
-        <span>Account</span>
+        <span>Favorites</span>
+        <v-icon>mdi-post</v-icon>
+      </v-btn>
+
+      <v-btn>
+        <span>Nearby</span>
         <v-icon>mdi-account</v-icon>
       </v-btn>
-      <v-spacer />
     </v-bottom-navigation>
   </v-app>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      activeBtn: 1
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
