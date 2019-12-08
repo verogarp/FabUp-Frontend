@@ -1,41 +1,28 @@
 <template>
   <v-app color="primary">
+    <div>
+      <!-- TODO: Add this:https://vuetifyjs.com/en/components/navigation-drawers -->
+      <v-app-bar color="#f9a825">
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+        <v-spacer></v-spacer>
+        <v-toolbar-title>FabUp</v-toolbar-title>
+
+        <v-menu left bottom>
+          <v-list>
+            <v-list-item v-for="n in 5" :key="n" @click="() => {}">
+              <v-list-item-title>Option {{ n }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </v-app-bar>
+    </div>
     <nuxt />
-    <div class="text-center mb-2"></div>
-
-    <v-bottom-navigation
-      style="background: #f9a825"
-      color="white"
-      :value="activeBtn"
-      grow
-      fixed
-    >
-      <v-btn>
-        <span>Recents</span>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn>
-        <span>Favorites</span>
-        <v-icon>mdi-post</v-icon>
-      </v-btn>
-
-      <v-btn>
-        <span>Nearby</span>
-        <v-icon>mdi-account</v-icon>
-      </v-btn>
-    </v-bottom-navigation>
   </v-app>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      activeBtn: 1
-    }
-  }
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>

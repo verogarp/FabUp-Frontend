@@ -1,23 +1,18 @@
 <template>
   <div>
     <v-flex class="fabup-center">
-      <Title class="fabup-title-font">Welcome</Title>
-      <Paragraph>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit
-        tenetur animi nobis consectetur suscipit provident dicta ratione aliquam
-        cupiditate veniam nisi, quis numquam ipsa neque rem veritatis velit.
-        Temporibus, architecto!
-      </Paragraph>
+      <Title class="fabup-title-font"
+        >A place to show-off your skills, and get fabulous</Title
+      >
     </v-flex>
   </div>
 </template>
 
 <script>
 import Title from '~/components/atoms/Title'
-import Paragraph from '~/components/atoms/Paragraph'
 
 export default {
-  components: { Title, Paragraph }
+  components: { Title }
 }
 </script>
 

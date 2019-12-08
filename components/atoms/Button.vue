@@ -1,5 +1,5 @@
 <template>
-  <v-flex class="fabup-center">
+  <v-flex class="text-center">
     <v-btn large outlined max-width tile>
       <slot></slot>
     </v-btn>

@@ -1,5 +1,5 @@
 <template>
-  <v-flex class="fabup-center">
+  <v-flex class="text-center">
     <a @click="test">
       <slot></slot>
     </a>

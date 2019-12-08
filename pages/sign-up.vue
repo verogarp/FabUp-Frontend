@@ -14,15 +14,6 @@
 
       <v-row align="center" justify="center">
         <v-col cols="12">
-          <h2 class="fabup-title-font">When is your birthday?</h2>
-        </v-col>
-        <v-col cols="12">
-          <v-text-field label="Birthday" outlined></v-text-field>
-        </v-col>
-      </v-row>
-
-      <v-row align="center" justify="center">
-        <v-col cols="12">
           <h2 class="fabup-title-font">What is your email?</h2>
         </v-col>
         <v-col cols="12">
@@ -66,7 +57,7 @@
         </v-col>
       </v-row>
       <v-col cols="12">
-        <v-btn large width="100%" tile color="primary">Confirm</v-btn>
+        <v-btn large width="100%" tile color="primary">CONFIRM</v-btn>
       </v-col>
     </v-container>
   </div>
