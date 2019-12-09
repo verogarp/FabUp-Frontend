@@ -21,6 +21,29 @@
           </v-sheet>
         </v-carousel-item>
       </v-carousel>
+
+      <v-row align="center" justify="center">
+        <v-col cols="12">
+          <h2>Best makeup of gran canaria</h2>
+          <p>Created november 2019</p>
+        </v-col>
+      </v-row>
+
+      <v-row align="center" justify="center" class="mx-0">
+        <v-col cols="12">
+          <h4>Las Palmas de Gran Canaria</h4>
+          <h4 color="#f9a825">45€</h4>
+        </v-col>
+      </v-row>
+
+      <v-row align="center" justify="center">
+        <v-col cols="12">
+          <h4>
+            I can cut your hair using a katana, as well as stylizing it with a
+            mini-flamethrower. You will look very cool!
+          </h4>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>

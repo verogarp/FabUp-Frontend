@@ -1,9 +1,9 @@
 <template>
   <div id="main">
     <v-container class="fill-height">
-      <v-row align="center" justify="center" no-gutters>
+      <v-row align="center" justify="center">
         <v-col cols="2" class="text-left">
-          <v-btn text>
+          <v-btn text to="/my-ads">
             <v-icon>mdi-chevron-left</v-icon>
           </v-btn>
         </v-col>
@@ -11,28 +11,28 @@
           <h1 class="fabup-title-font display-1">Create ad</h1>
         </v-col>
       </v-row>
-      <v-row align="center" justify="center" no-gutters>
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <v-text-field label="Title" outlined></v-text-field>
         </v-col>
       </v-row>
-      <v-row align="center" justify="center" no-gutters>
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <v-text-field label="Price" outlined></v-text-field>
         </v-col>
       </v-row>
-      <v-row align="center" justify="center" no-gutters>
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <v-text-field label="Location" outlined></v-text-field>
         </v-col>
       </v-row>
-      <v-row align="center" justify="center" no-gutters>
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <v-text-field label="Description" outlined></v-text-field>
         </v-col>
       </v-row>
 
-      <v-row align="center" justify="center" no-gutters>
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <input
             id="file"
@@ -47,7 +47,7 @@
           </label>
         </v-col>
       </v-row>
-      <v-row align="center" justify="center" no-gutters>
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <v-btn large width="100%" tile color="primary" @click="submitFile"
             >UPLOAD</v-btn
@@ -65,7 +65,7 @@
         </v-col>
       </v-row>-->
 
-      <v-row align="center" justify="center" no-gutters>
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <v-btn large width="100%" tile color="primary">CREATE</v-btn>
         </v-col>

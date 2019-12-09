@@ -2,31 +2,33 @@
   <div id="main">
     <v-container class="fill-height">
       <v-row align="center" justify="center">
-        <v-col cols="4" class="text-right">
+        <v-col cols="8" class="text-left">
           <v-btn text>
             <v-icon>mdi-chevron-left</v-icon>
           </v-btn>
         </v-col>
-        <v-col cols="8">
-          <h1 class="fabup-title-font display-1	">Edit ad</h1>
+        <v-col cols="4" class="text-right">
+          <v-btn fab style="background: #f9a825">
+            <v-icon color="white">mdi-pencil</v-icon>
+          </v-btn>
         </v-col>
       </v-row>
-      <v-row align="center" justify="center">
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <v-text-field label="Title" outlined></v-text-field>
         </v-col>
       </v-row>
-      <v-row align="center" justify="center">
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <v-text-field label="Price" outlined></v-text-field>
         </v-col>
       </v-row>
-      <v-row align="center" justify="center">
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <v-text-field label="Location" outlined></v-text-field>
         </v-col>
       </v-row>
-      <v-row align="center" justify="center">
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <v-text-field label="Description" outlined></v-text-field>
         </v-col>
@@ -56,9 +58,9 @@
             target="#dropdown-example"
           ></v-overflow-btn>
         </v-col>
-      </v-row> -->
+      </v-row>-->
       <v-col cols="12">
-        <v-btn large width="100%" tile color="primary">CREATE</v-btn>
+        <v-btn large width="100%" tile color="primary">CONFIRM</v-btn>
       </v-col>
     </v-container>
   </div>

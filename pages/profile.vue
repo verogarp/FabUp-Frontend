@@ -2,12 +2,12 @@
   <div>
     <v-container class="fill-height">
       <v-row align="center" justify="center">
-        <v-col cols="4" class="text-right">
+        <v-col cols="4" class="text-left">
           <v-btn text>
             <v-icon>mdi-chevron-left</v-icon>
           </v-btn>
         </v-col>
-        <v-col cols="8">
+        <v-col cols="8" class="text-right">
           <h1 class="fabup-title-font display-1">Profile</h1>
         </v-col>
       </v-row>
@@ -42,7 +42,9 @@
         </v-col>
       </v-row>
       <v-col cols="12">
-        <v-btn large width="100%" tile color="primary">EDIT PROFILE</v-btn>
+        <v-btn large width="100%" tile color="primary" to="/edit-profile"
+          >EDIT PROFILE</v-btn
+        >
       </v-col>
     </v-container>
   </div>
