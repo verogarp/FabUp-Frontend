@@ -1,6 +1,6 @@
 <template>
   <div id="main">
-    <v-container class="fill-height">
+    <v-container class="fill-height mt-1">
       <v-row align="center" justify="center">
         <v-col cols="2" class="text-left">
           <v-btn text to="/my-ads">

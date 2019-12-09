@@ -11,7 +11,7 @@
           <h1 class="fabup-title-font display-1">My Ads</h1>
         </v-col>
         <v-col cols="3" class="text-right">
-          <v-btn fab style="background: #f9a825" to="/new-ad">
+          <v-btn fab style="background: #f9a825" to="/new-ad" small>
             <v-icon color="white">mdi-plus</v-icon>
           </v-btn>
         </v-col>
