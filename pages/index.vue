@@ -15,10 +15,14 @@
 
       <v-row class="text-center mx-0 mt-12">
         <v-col cols="6" class="text-center">
-          <v-btn large width="100%" tile color="white">SIGN IN</v-btn>
+          <v-btn large width="100%" tile color="white" to="/sign-in"
+            >SIGN IN</v-btn
+          >
         </v-col>
         <v-col cols="6" class="text-center">
-          <v-btn large width="100%" tile color="white">SIGN UP</v-btn>
+          <v-btn large width="100%" tile color="white" to="/sign-up"
+            >SIGN UP</v-btn
+          >
         </v-col>
         <v-col cols="12" class="text-center">
           <p>Forgot your password?</p>

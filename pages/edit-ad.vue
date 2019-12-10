@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <v-container class="fill-height">
-      <v-row align="center" justify="center">
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="3" class="text-left">
           <v-btn text to="/my-ads">
             <v-icon>mdi-chevron-left</v-icon>

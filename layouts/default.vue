@@ -3,18 +3,20 @@
     <v-navigation-drawer v-model="drawer" app color="#f9a825">
       <v-list-item>
         <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+          <v-img
+            src="https://laboratoriosniam.com/wp-content/uploads/2018/07/michael-dam-258165-unsplash_WEB2.jpg"
+          ></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
+          <v-list-item-title>Elizabeth Stark</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
       <v-divider></v-divider>
 
       <v-list dense>
-        <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item v-for="item in items" :key="item.title" link :to="item.to">
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -24,9 +26,19 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <template v-slot:append>
+        <v-list-item link>
+          <v-list-item-icon>
+            <v-icon>mdi-logout</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Sign Out</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </template>
     </v-navigation-drawer>
 
-    <!-- TODO: Add this:https://vuetifyjs.com/en/components/navigation-drawers -->
     <v-app-bar app color="#f9a825">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
@@ -60,9 +72,15 @@ export default {
     return {
       drawer: false,
       items: [
-        { title: 'Dashboard', icon: 'dashboard' },
-        { title: 'Account', icon: 'account_box' },
-        { title: 'Admin', icon: 'gavel' }
+        { title: 'Profile', icon: 'mdi-account', to: '/profile' },
+        { title: 'My Ads', icon: 'mdi-account-card-details', to: '/my-ads' },
+        { title: 'Messages', icon: 'mdi-android-messages', to: '' },
+        {
+          title: 'Favorite Ads',
+          icon: 'mdi-heart-multiple-outline',
+          to: '/favorite-ads'
+        },
+        { title: 'Settings', icon: 'mdi-settings-outline', to: '' }
       ]
     }
   }
