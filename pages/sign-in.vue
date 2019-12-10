@@ -39,8 +39,8 @@
           width="100%"
           color="white"
           tile
-          @click="login"
           to="/profile"
+          @click="login"
           >Confirm</v-btn
         >
       </v-col>

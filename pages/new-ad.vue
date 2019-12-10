@@ -43,17 +43,15 @@
             @change="handleFileUpload()"
           />
           <label for="file">
-            <p large width="100%" tile color="primary">Choose file</p>
+            <p large width="100%" tile color="primary">
+              <v-alert type="warning" icon="mdi-image-plus" color="#f9a825"
+                >CHOOSE PICTURES</v-alert
+              >
+            </p>
           </label>
         </v-col>
       </v-row>
-      <v-row align="center" justify="center" class="mx-0">
-        <v-col cols="12">
-          <v-btn large width="100%" tile color="primary" @click="submitFile"
-            >UPLOAD</v-btn
-          >
-        </v-col>
-      </v-row>
+
       <!-- <v-row>
         <v-col cols="12">
           <v-overflow-btn
