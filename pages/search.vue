@@ -3,22 +3,24 @@
     <v-container class="fill-height">
       <v-row align="center" justify="center" class="mx-0">
         <v-col class="text-right" cols="12">
-          <h1 class="fabup-title-font display-1">My Ads</h1>
+          <h1 class="fabup-title-font display-1">Search</h1>
         </v-col>
       </v-row>
 
-      <v-btn
-        fab
-        style="background: #f9a825"
-        to="/new-ad"
-        absolute
-        bottom
-        right
-        fixed
-        class="mb-12"
-      >
-        <v-icon color="white">mdi-plus</v-icon>
-      </v-btn>
+      <v-row align="center" justify="center" class="mx-0">
+        <v-col cols="12">
+          <v-overflow-btn
+            v-model="selectedCategory"
+            class="my-2"
+            :items="categories"
+            item-text="category"
+            item-value="_id"
+            label="Select Category"
+            target="#dropdown-example"
+            @change="getByCategory"
+          ></v-overflow-btn>
+        </v-col>
+      </v-row>
 
       <v-card
         v-for="ad in ads"
@@ -47,7 +49,9 @@ import axios from '~/plugins/axios'
 export default {
   data() {
     return {
-      ads: []
+      ads: [],
+      categories: [],
+      selectedCategory: ''
     }
   },
   created() {
@@ -55,15 +59,23 @@ export default {
       .get('/ads')
       .then(res => res.data)
       .then(ads => {
-        console.log(ads)
         this.ads = ads
       })
+  },
+  mounted() {
+    this.getAllCategories()
+  },
+  methods: {
+    async getAllCategories() {
+      const response = await axios.get('/categories')
+      this.categories = response.data
+    },
+    async getByCategory() {
+      const response = await axios.get(
+        `/ads/search?category=${this.selectedCategory}`
+      )
+      this.ads = response.data
+    }
   }
-  // created() {
-  //   axios
-  //     .get('/ads/search/me')
-  //     .then(res => res.data)
-  //     .then(ads => (this.ads = ads))
-  // }
 }
 </script>

@@ -28,7 +28,7 @@
         <v-col cols="12">
           <v-text-field
             v-model="price"
-            label="Price"
+            label="Price in euro"
             outlined
             validate-on-blur
             :rules="[rules.required]"
@@ -113,11 +113,7 @@ export default {
       location: '',
       description: '',
       rules: {
-        required: v => !!v || 'Item is required',
-        email: value => {
-          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          return pattern.test(value) || 'Invalid e-mail.'
-        }
+        required: v => !!v || 'Item is required'
       },
       categories: [],
       selectedCategory: ''
@@ -145,6 +141,7 @@ export default {
           description: this.description,
           image: this.file,
           category: this.selectedCategory
+          // author: this.$store.getters.
         }
         await axios.post('ads/create', ad)
       } catch (e) {

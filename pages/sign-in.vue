@@ -34,13 +34,7 @@
         ></v-text-field>
       </v-col>
       <v-col cols="12">
-        <v-btn
-          large
-          width="100%"
-          color="white"
-          tile
-          to="/profile"
-          @click="login"
+        <v-btn large width="100%" color="white" tile to="/" @click="login"
           >Confirm</v-btn
         >
       </v-col>

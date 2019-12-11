@@ -57,12 +57,6 @@
     <v-content>
       <nuxt />
     </v-content>
-
-    <v-footer padless color="#f9a825">
-      <v-col class="text-center" cols="12">
-        <strong>Wellness</strong> &amp; <strong>Beauty</strong> Marketplace
-      </v-col>
-    </v-footer>
   </v-app>
 </template>
 
@@ -72,9 +66,11 @@ export default {
     return {
       drawer: false,
       items: [
-        { title: 'Profile', icon: 'mdi-account', to: '/profile' },
+        { title: 'Profile', icon: 'mdi-account', to: '/' },
+        { title: 'Search Ad', icon: 'mdi-magnify', to: '/search' },
         { title: 'My Ads', icon: 'mdi-account-card-details', to: '/my-ads' },
-        { title: 'Messages', icon: 'mdi-android-messages', to: '' },
+        { title: 'Messages', icon: 'mdi-android-messages', to: '/chat-room' },
+
         {
           title: 'Favorite Ads',
           icon: 'mdi-heart-multiple-outline',
