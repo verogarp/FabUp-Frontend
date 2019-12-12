@@ -67,10 +67,10 @@ export default {
       }
       const newToken = await this.$store.dispatch('login', { user })
 
-      if (!newToken.data.error) {
+      if (!newToken.error) {
         this.$router.push('/')
       } else {
-        alert(newToken.data.error)
+        alert(newToken.error)
       }
     }
   }

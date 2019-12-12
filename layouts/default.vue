@@ -33,7 +33,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>Sign Out</v-list-item-title>
+            <v-list-item-title @click="signOut">Sign Out</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </template>
@@ -78,6 +78,12 @@ export default {
         },
         { title: 'Settings', icon: 'mdi-settings-outline', to: '' }
       ]
+    }
+  },
+  methods: {
+    signOut() {
+      this.$store.commit('clearToken')
+      this.$router.push('/')
     }
   }
 }

@@ -12,7 +12,7 @@
           <v-icon>mdi-account</v-icon>
         </v-col>
         <v-col cols="10">
-          <h3 class="subtitle-1">Elizabeth Stark</h3>
+          <h3 class="subtitle-1">{{ userName }}</h3>
         </v-col>
       </v-row>
 

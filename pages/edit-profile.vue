@@ -31,9 +31,7 @@
 
       <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
-          <v-btn large width="100%" tile color="primary" to="/profile"
-            >CONFIRM</v-btn
-          >
+          <v-btn large width="100%" tile color="primary" to="/">CONFIRM</v-btn>
         </v-col>
       </v-row>
     </v-container>

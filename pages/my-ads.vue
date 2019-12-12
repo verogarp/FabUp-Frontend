@@ -49,9 +49,13 @@
 <script>
 export default {
   async asyncData({ $axios, store }) {
+    console.log('ola ? ')
+
     const { data } = await $axios.get('/ads/mine', {
       headers: { access_token: store.getters.token }
     })
+    console.log({ data })
+
     return { ads: data }
   },
   data() {
