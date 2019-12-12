@@ -3,7 +3,7 @@
     <v-container class="fill-height">
       <v-row align="center" justify="center">
         <v-col cols="4" class="text-left">
-          <v-btn text to="/profile">
+          <v-btn text to="/">
             <v-icon>mdi-chevron-left</v-icon>
           </v-btn>
         </v-col>

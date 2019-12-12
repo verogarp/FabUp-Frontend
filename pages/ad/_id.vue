@@ -2,13 +2,15 @@
   <v-container class="fill-height">
     <v-row align="center" justify="center" class="mx-0 mt-1">
       <v-col cols="8" class="text-left">
-        <v-btn text to="/my-ads">
+        <v-btn text to="/search">
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
       </v-col>
       <v-col cols="4" class="text-right">
         <v-btn small fab style="background: #f9a825">
-          <v-icon color="white">mdi-heart-outline</v-icon>
+          <v-icon color="white" @click="newConversation(ad.author)"
+            >mdi-android-messages</v-icon
+          >
         </v-btn>
       </v-col>
     </v-row>
@@ -28,6 +30,7 @@
 
     <v-row align="center" justify="center" class="mx-0">
       <v-col cols="12">
+        <h4>{{ authorName }}</h4>
         <h4>{{ ad.location }}</h4>
         <h4 color="#f9a825">{{ ad.price }}€</h4>
       </v-col>
@@ -44,10 +47,13 @@
 <script>
 import axios from '~/plugins/axios'
 import moment from 'moment'
+import api from '~/services/api'
+
 export default {
   data() {
     return {
-      ad: []
+      ad: {},
+      authorName: ''
     }
   },
   computed: {
@@ -60,6 +66,21 @@ export default {
     const ad = (await axios.get('/ads/' + actualID)).data
     this.ad = ad
     console.log({ ad })
+    this.authorName = await this.nameForEmail(ad.author)
+  },
+  methods: {
+    async newConversation(user) {
+      const conversation = await api.createConversationWith(
+        user,
+        this.$store.getters.token
+      )
+      this.$router.push(`/conversation/${conversation._id}`)
+    },
+    async nameForEmail(email) {
+      const token = this.$store.getters.token
+      const user = await api.getUserByEmail(email, token)
+      return user.name
+    }
   }
 }
 </script>

@@ -13,7 +13,7 @@
             :src="userPhoto"
             alt="profileImage"
             max-width="300"
-            max-height="150"
+            max-height="250"
           />
         </v-col>
       </v-row>
@@ -67,7 +67,6 @@ export default {
   },
   async mounted() {
     setTimeout(() => {
-      console.log(this.token)
       if (!this.token) {
         this.$router.push('/auth')
       }

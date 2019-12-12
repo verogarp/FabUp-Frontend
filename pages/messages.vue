@@ -19,10 +19,7 @@
           >
             <v-list-item>
               <v-list-item-avatar size="80">
-                <img
-                  src="https://cdn.vuetifyjs.com/images/john.jpg"
-                  alt="Avatar image"
-                />
+                <img :src="message.destination.photo" alt="Avatar image" />
               </v-list-item-avatar>
 
               <v-list-item-content class="text-left">
@@ -30,7 +27,7 @@
                   message.destination.name
                 }}</v-list-item-title>
                 <v-list-item-subtitle>
-                  {{ message.messages[0].content }}
+                  {{ lastMessage(message) }}
                 </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
@@ -43,38 +40,50 @@
 
 <script>
 import axios from '~/plugins/axios'
+import api from '~/services/api'
+
 export default {
-  data() {
-    return {
-      messages: []
-    }
-  },
-  async created() {
-    const token = this.$store.state.token
-    const rawMessages = await axios
-      .get('/messages/my-conversations', {
-        headers: {
-          access_token: token
-        }
-      })
-      .then(x => x.data)
-      .catch(e => console.log(e))
-    if (!rawMessages) return
-    rawMessages.forEach(async rawMessage => {
+  async asyncData({ $axios, store }) {
+    console.log('ola ? ')
+    const messages = []
+    const token = store.getters.token
+    const { data } = await $axios.get('messages/my-conversations', {
+      headers: {
+        access_token: token
+      }
+    })
+    if (!data) return
+    data.forEach(async rawMessage => {
       const userOne = (await axios.get(`/users/byEmail/${rawMessage.userOne}`))
         .data
       const userTwo = (await axios.get(`/users/byEmail/${rawMessage.userTwo}`))
         .data
-      const me = userOne.email == this.$store.state.email ? userOne : userTwo
+      const me = userOne.email == store.state.email ? userOne : userTwo
       console.log(me)
       const destination = me === userOne ? userTwo : userOne
       console.log(destination)
-      this.messages.push({
+      messages.push({
         ...rawMessage,
         me,
         destination
       })
     })
+    return { messages }
+  },
+  data() {
+    return {
+      messages: []
+    }
+  },
+  methods: {
+    lastMessage(conversation) {
+      return conversation.messages ? conversation.messages[0].text : ''
+    },
+    async getUserPhoto(email) {
+      const token = this.$store.getters.token
+      const user = await api.getUserByEmail(email, token)
+      return user.photo
+    }
   }
 }
 </script>
