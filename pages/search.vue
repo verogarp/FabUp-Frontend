@@ -15,7 +15,7 @@
             :items="categories"
             item-text="category"
             item-value="_id"
-            label="Select Category"
+            label="All Categories"
             target="#dropdown-example"
             @change="getByCategory"
           ></v-overflow-btn>

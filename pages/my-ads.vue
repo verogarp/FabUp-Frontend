@@ -4,7 +4,6 @@
       <v-row align="center" justify="center" class="mx-0">
         <v-col class="text-right" cols="12">
           <h1 class="fabup-title-font display-1">My Ads</h1>
-          <p>{{ $store.state.ads }}</p>
         </v-col>
       </v-row>
 
@@ -48,14 +47,12 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
-
 export default {
-  async fetch({ store }) {
-    const { data } = await axios.get('/ads/mine', {
-      headers: { access_token: store.state.token }
+  async asyncData({ $axios, store }) {
+    const { data } = await $axios.get('/ads/mine', {
+      headers: { access_token: store.getters.token }
     })
-    store.commit('saveAds', data)
+    return { ads: data }
   },
   data() {
     return {

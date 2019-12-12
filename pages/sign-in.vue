@@ -34,7 +34,7 @@
         ></v-text-field>
       </v-col>
       <v-col cols="12">
-        <v-btn large width="100%" color="white" tile to="/" @click="login"
+        <v-btn large width="100%" color="white" tile @click="login"
           >Confirm</v-btn
         >
       </v-col>
@@ -43,8 +43,6 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
-
 export default {
   layout: 'withoutNavigationBar',
   data() {
@@ -67,11 +65,9 @@ export default {
         user_email: this.email,
         user_password: this.password
       }
-
-      const newToken = await axios.post('auth/login', user)
+      const newToken = await this.$store.dispatch('login', { user })
 
       if (!newToken.data.error) {
-        this.$store.commit('saveToken', newToken.data)
         this.$router.push('/')
       } else {
         alert(newToken.data.error)

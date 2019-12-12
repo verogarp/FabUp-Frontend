@@ -3,7 +3,7 @@
     <v-container class="fill-height">
       <v-row align="center" justify="center" class="mx-0">
         <v-col cols="4" class="text-left">
-          <v-btn text to="/my-ads">
+          <v-btn text to="/messages">
             <v-icon>mdi-chevron-left</v-icon>
           </v-btn>
         </v-col>

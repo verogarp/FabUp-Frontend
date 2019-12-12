@@ -28,15 +28,19 @@ export const mutations = {
     state.ads = ads
   }
 }
-// import axios from '~/plugins/axios'
 
-// export const actions = {
-//   async getAds(context) {
-//     const token = context.getters.token
-//     debugger
-//     const { data } = await axios.get('/ads/mine', {
-//       headers: { access_token: context.state.token }
-//     })
-//     return data
-//   }
-// }
+import api from '~/services/api'
+
+export const actions = {
+  async login(context, payload) {
+    const userData = await api.login(payload.user)
+
+    if (!userData.error) {
+      context.commit('saveToken', userData)
+      // ...
+    } else {
+      alert(userData.error)
+    }
+    return userData
+  }
+}

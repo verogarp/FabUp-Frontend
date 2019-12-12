@@ -53,7 +53,27 @@
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+
+export default {
+  data() {
+    return {
+      ads: null
+    }
+  },
+
+  computed: {
+    ...mapGetters(['token', 'userName'])
+  },
+  async mounted() {
+    setTimeout(() => {
+      console.log(this.token)
+      if (!this.token) {
+        this.$router.push('/auth')
+      }
+    }, 0)
+  }
+}
 </script>
 
 <style scoped lang="scss"></style>
