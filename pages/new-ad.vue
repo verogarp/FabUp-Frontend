@@ -140,10 +140,11 @@ export default {
           location: this.location,
           description: this.description,
           image: this.file,
-          category: this.selectedCategory
-          // author: this.$store.getters.
+          category: this.selectedCategory,
+          author: this.$store.state.email
         }
         await axios.post('ads/create', ad)
+        this.$router.push('/my-ads')
       } catch (e) {
         console.error(e.response.data.message)
       }

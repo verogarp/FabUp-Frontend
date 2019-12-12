@@ -69,7 +69,7 @@ export default {
         { title: 'Profile', icon: 'mdi-account', to: '/' },
         { title: 'Search Ad', icon: 'mdi-magnify', to: '/search' },
         { title: 'My Ads', icon: 'mdi-account-card-details', to: '/my-ads' },
-        { title: 'Messages', icon: 'mdi-android-messages', to: '/chat-room' },
+        { title: 'Messages', icon: 'mdi-android-messages', to: '/messages' },
 
         {
           title: 'Favorite Ads',
