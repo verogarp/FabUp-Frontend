@@ -29,7 +29,7 @@
     <v-row align="center" justify="center" class="mx-0">
       <v-col cols="12">
         <h4>{{ ad.location }}</h4>
-        <h4 color="#f9a825">{{ ad.price }}</h4>
+        <h4 color="#f9a825">{{ ad.price }}€</h4>
       </v-col>
     </v-row>
 

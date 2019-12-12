@@ -3,13 +3,11 @@
     <v-navigation-drawer v-model="drawer" app color="#f9a825">
       <v-list-item>
         <v-list-item-avatar>
-          <v-img
-            src="https://laboratoriosniam.com/wp-content/uploads/2018/07/michael-dam-258165-unsplash_WEB2.jpg"
-          ></v-img>
+          <v-img :src="userPhoto"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>Elizabeth Stark</v-list-item-title>
+          <v-list-item-title>{{ userName }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -61,6 +59,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   data() {
     return {
@@ -79,6 +79,9 @@ export default {
         { title: 'Settings', icon: 'mdi-settings-outline', to: '' }
       ]
     }
+  },
+  computed: {
+    ...mapGetters(['token', 'userName', 'userPhoto'])
   },
   methods: {
     signOut() {

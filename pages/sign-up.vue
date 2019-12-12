@@ -40,6 +40,22 @@
 
       <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
+          <h2 class="fabup-title-font">Where do you work?</h2>
+        </v-col>
+        <v-col cols="12">
+          <v-text-field
+            v-model="location"
+            label="Location"
+            outlined
+            color="black"
+            :rules="[rules.required]"
+            validate-on-blur
+          ></v-text-field>
+        </v-col>
+      </v-row>
+
+      <v-row align="center" justify="center" class="mx-0">
+        <v-col cols="12">
           <h2 class="fabup-title-font">Create a password</h2>
         </v-col>
         <v-col cols="12">
@@ -58,12 +74,29 @@
 
       <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
+          <label for="file">
+            <v-alert icon="mdi-image-plus" color="white" dense
+              >UPLOAD PHOTO</v-alert
+            >
+          </label>
+        </v-col>
+      </v-row>
+
+      <v-row align="center" justify="center" class="mx-0">
+        <v-col cols="12">
           <v-btn large width="100%" tile color="white" @click="signup"
             >CONFIRM</v-btn
           >
         </v-col>
       </v-row>
     </v-container>
+    <input
+      id="file"
+      ref="file"
+      name="file"
+      type="file"
+      @change="handleFileUpload"
+    />
   </div>
 </template>
 
@@ -74,6 +107,8 @@ export default {
   layout: 'withoutNavigationBar',
   data() {
     return {
+      location: '',
+      file: '',
       email: '',
       password: '',
       name: '',
@@ -89,11 +124,22 @@ export default {
     }
   },
   methods: {
+    handleFileUpload() {
+      // When selecting images, convert to Base64 string
+      const reader = new FileReader() // A FileReader is used to convert into different formats
+      reader.onloadend = () => {
+        this.file = reader.result // If it finishes loading, we push the result into the `files` array
+      }
+      reader.onerror = Promise.reject // If not, we throw an error
+      reader.readAsDataURL(this.$refs.file.files[0]) //  We tell the reader to convert the image into the base64 string
+    },
     async signup() {
       const user = {
         user_name: this.name,
         user_email: this.email,
-        user_password: this.password
+        user_password: this.password,
+        photo: this.file,
+        location: this.location
       }
 
       const newToken = await axios.post('auth/signup', user)

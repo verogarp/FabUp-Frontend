@@ -7,7 +7,18 @@
         </v-col>
       </v-row>
 
-      <v-row align="center" justify="center">
+      <v-row align="center" justify="center" class="mx-0">
+        <v-col cols="12" class="text-center">
+          <v-img
+            :src="userPhoto"
+            alt="profileImage"
+            max-width="300"
+            max-height="150"
+          />
+        </v-col>
+      </v-row>
+
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="2" class="text-right">
           <v-icon>mdi-account</v-icon>
         </v-col>
@@ -16,26 +27,15 @@
         </v-col>
       </v-row>
 
-      <v-row align="center" justify="center">
+      <v-row align="center" justify="center" class="mx-0">
         <v-col cols="2" class="text-right">
           <v-icon>mdi-crosshairs-gps</v-icon>
         </v-col>
         <v-col cols="10">
-          <h3 class="subtitle-1">Ingenio</h3>
+          <h3 class="subtitle-1">{{ userLocation }}</h3>
         </v-col>
       </v-row>
 
-      <v-row align="center" justify="center">
-        <v-col cols="2" class="text-right">
-          <v-icon>mdi-cellphone-information</v-icon>
-        </v-col>
-        <v-col cols="10">
-          <h3 class="subtitle-1">
-            I’ve studied a master in hairstyle Also, I’ve finished a course on
-            manicure I like making crazy haircuts that match with your nails
-          </h3>
-        </v-col>
-      </v-row>
       <v-btn
         fab
         style="background: #f9a825"
@@ -63,7 +63,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['token', 'userName'])
+    ...mapGetters(['token', 'userName', 'userLocation', 'userPhoto'])
   },
   async mounted() {
     setTimeout(() => {
