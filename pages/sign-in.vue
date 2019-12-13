@@ -16,6 +16,7 @@
           v-model="email"
           label="E-mail"
           outlined
+          dense
           :rules="[rules.required, rules.email]"
           validate-on-blur
           color="black"
@@ -26,6 +27,7 @@
           v-model="password"
           label="Password"
           outlined
+          dense
           :type="showPassword ? 'text' : 'password'"
           :rules="[rules.required]"
           :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
@@ -37,6 +39,9 @@
         <v-btn large width="100%" color="white" tile @click="login"
           >Confirm</v-btn
         >
+      </v-col>
+      <v-col cols="12" class="text-center">
+        <v-btn text to="/auth">Go back</v-btn>
       </v-col>
     </v-row>
   </v-container>

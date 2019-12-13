@@ -18,6 +18,7 @@
             v-model="title"
             label="Title"
             outlined
+            dense
             validate-on-blur
             :rules="[rules.required]"
           ></v-text-field>
@@ -30,6 +31,7 @@
             v-model="price"
             label="Price in euro"
             outlined
+            dense
             validate-on-blur
             :rules="[rules.required]"
           ></v-text-field>
@@ -42,6 +44,7 @@
             v-model="location"
             label="Location"
             outlined
+            dense
             validate-on-blur
             :rules="[rules.required]"
           ></v-text-field>
@@ -54,6 +57,7 @@
             v-model="description"
             label="Description"
             outlined
+            dense
             validate-on-blur
             :rules="[rules.required]"
           ></v-text-field>

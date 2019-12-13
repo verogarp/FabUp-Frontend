@@ -29,7 +29,11 @@
         width="100%"
         :to="`/ad/${ad._id}`"
       >
-        <v-img class="white--text align-end" :src="ad.image"></v-img>
+        <v-img
+          max-height="250px"
+          class="white--text align-end"
+          :src="ad.image"
+        ></v-img>
         <v-card-text class="text--primary">
           <v-row>
             <v-col cols="10">

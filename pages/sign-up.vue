@@ -15,6 +15,7 @@
             v-model="name"
             label="Name"
             outlined
+            dense
             color="black"
             :rules="[rules.required]"
             validate-on-blur
@@ -31,6 +32,7 @@
             v-model="email"
             label="E-mail"
             outlined
+            dense
             color="black"
             :rules="[rules.required, rules.email]"
             validate-on-blur
@@ -47,6 +49,7 @@
             v-model="location"
             label="Location"
             outlined
+            dense
             color="black"
             :rules="[rules.required]"
             validate-on-blur
@@ -63,6 +66,7 @@
             v-model="password"
             label="Password"
             outlined
+            dense
             color="black"
             :type="showPassword ? 'text' : 'password'"
             :rules="[rules.required, rules.password]"
@@ -87,6 +91,9 @@
           <v-btn large width="100%" tile color="white" @click="signup"
             >CONFIRM</v-btn
           >
+        </v-col>
+        <v-col cols="12" class="text-center">
+          <v-btn text to="/auth">Go back</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -154,4 +161,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+#file {
+  visibility: hidden;
+}
+</style>
