@@ -41,6 +41,24 @@
         <p>{{ ad.description }}</p>
       </v-col>
     </v-row>
+
+    <v-row align="center" justify="center" class="mx-0">
+      <v-col cols="4" class="text-left">
+        <v-btn text small>
+          <v-icon>mdi-google</v-icon>
+        </v-btn>
+      </v-col>
+      <v-col cols="4" class="text-left">
+        <v-btn text small>
+          <v-icon>mdi-facebook</v-icon>
+        </v-btn>
+      </v-col>
+      <v-col cols="4" class="text-left">
+        <v-btn text small>
+          <v-icon>mdi-whatsapp</v-icon>
+        </v-btn>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
