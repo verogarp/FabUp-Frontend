@@ -69,14 +69,14 @@ export default {
         { title: 'Profile', icon: 'mdi-account', to: '/' },
         { title: 'Search Ad', icon: 'mdi-magnify', to: '/search' },
         { title: 'My Ads', icon: 'mdi-account-card-details', to: '/my-ads' },
-        { title: 'Messages', icon: 'mdi-android-messages', to: '/messages' },
+        { title: 'Messages', icon: 'mdi-android-messages', to: '/messages' }
 
-        {
-          title: 'Favorite Ads',
-          icon: 'mdi-heart-multiple-outline',
-          to: '/favorite-ads'
-        },
-        { title: 'Settings', icon: 'mdi-settings-outline', to: '' }
+        // {
+        //   title: 'Favorite Ads',
+        //   icon: 'mdi-heart-multiple-outline',
+        //   to: '/favorite-ads'
+        // },
+        // { title: 'Settings', icon: 'mdi-settings-outline', to: '' }
       ]
     }
   },

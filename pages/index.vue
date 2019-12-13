@@ -36,7 +36,7 @@
         </v-col>
       </v-row>
 
-      <v-btn
+      <!-- <v-btn
         fab
         style="background: #f9a825"
         to="/edit-profile"
@@ -47,7 +47,7 @@
         class="mb-12"
       >
         <v-icon color="white">mdi-pen</v-icon>
-      </v-btn>
+      </v-btn>-->
     </v-container>
   </div>
 </template>

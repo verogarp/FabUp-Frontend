@@ -45,7 +45,7 @@
     <v-row align="center" justify="center" class="mx-0">
       <v-col cols="4" class="text-left">
         <v-btn text small>
-          <v-icon>mdi-google</v-icon>
+          <v-icon>mdi-telegram</v-icon>
         </v-btn>
       </v-col>
       <v-col cols="4" class="text-left">
@@ -83,7 +83,6 @@ export default {
     const actualID = this.$route.params.id
     const ad = (await axios.get('/ads/' + actualID)).data
     this.ad = ad
-    console.log({ ad })
     this.authorName = await this.nameForEmail(ad.author)
   },
   methods: {

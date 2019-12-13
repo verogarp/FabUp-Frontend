@@ -44,7 +44,6 @@ import api from '~/services/api'
 
 export default {
   async asyncData({ $axios, store }) {
-    console.log('ola ? ')
     const messages = []
     const token = store.getters.token
     const { data } = await $axios.get('messages/my-conversations', {
@@ -59,9 +58,7 @@ export default {
       const userTwo = (await axios.get(`/users/byEmail/${rawMessage.userTwo}`))
         .data
       const me = userOne.email == store.state.email ? userOne : userTwo
-      console.log(me)
       const destination = me === userOne ? userTwo : userOne
-      console.log(destination)
       messages.push({
         ...rawMessage,
         me,

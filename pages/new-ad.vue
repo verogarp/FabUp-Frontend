@@ -128,13 +128,12 @@ export default {
   },
   methods: {
     handleFileUpload() {
-      // When selecting images, convert to Base64 string
-      const reader = new FileReader() // A FileReader is used to convert into different formats
+      const reader = new FileReader()
       reader.onloadend = () => {
-        this.file = reader.result // If it finishes loading, we push the result into the `files` array
+        this.file = reader.result
       }
-      reader.onerror = Promise.reject // If not, we throw an error
-      reader.readAsDataURL(this.$refs.file.files[0]) //  We tell the reader to convert the image into the base64 string
+      reader.onerror = Promise.reject
+      reader.readAsDataURL(this.$refs.file.files[0])
     },
     async postAd() {
       try {
