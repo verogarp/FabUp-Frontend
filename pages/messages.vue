@@ -23,12 +23,12 @@
               </v-list-item-avatar>
 
               <v-list-item-content class="text-left">
-                <v-list-item-title class="headline mb-1">
-                  {{ message.destination.name }}
-                </v-list-item-title>
-                <v-list-item-subtitle>{{
-                  lastMessage(message)
-                }}</v-list-item-subtitle>
+                <v-list-item-title class="headline mb-1">{{
+                  message.destination.name
+                }}</v-list-item-title>
+                <v-list-item-subtitle>
+                  {{ lastMessage(message) }}
+                </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
           </v-card>
@@ -45,7 +45,7 @@ import api from '~/services/api'
 export default {
   async asyncData({ $axios, store }) {
     const messages = []
-    const token = store.getters.token
+    const token = localStorage.getItem('token')
     const { data } = await $axios.get('messages/my-conversations', {
       headers: {
         access_token: token

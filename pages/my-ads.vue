@@ -48,9 +48,10 @@
 
 <script>
 export default {
-  async asyncData({ $axios, store }) {
+  async asyncData({ $axios }) {
+    const token = localStorage.getItem('token')
     const { data } = await $axios.get('/ads/mine', {
-      headers: { access_token: store.getters.token }
+      headers: { access_token: token }
     })
 
     return { ads: data }

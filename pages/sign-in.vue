@@ -48,6 +48,8 @@
 </template>
 
 <script>
+import api from '~/services/api'
+
 export default {
   layout: 'withoutNavigationBar',
   data() {
@@ -70,12 +72,14 @@ export default {
         user_email: this.email,
         user_password: this.password
       }
-      const newToken = await this.$store.dispatch('login', { user })
+      const userData = await api.login(user)
+      await this.$store.dispatch('login', { userData })
+      localStorage.setItem('token', userData.token)
 
-      if (!newToken.error) {
+      if (!userData.error) {
         this.$router.push('/')
       } else {
-        alert(newToken.error)
+        alert(userData.error)
       }
     }
   }

@@ -67,7 +67,8 @@ export default {
   },
   async mounted() {
     setTimeout(() => {
-      if (!this.token) {
+      const token = localStorage.getItem('token')
+      if (!token) {
         this.$router.push('/auth')
       }
     }, 0)
