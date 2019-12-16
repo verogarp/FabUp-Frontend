@@ -81,7 +81,7 @@ export default {
       return email == this.$store.state.email
     },
     async sendMessage() {
-      const token = this.$store.getters.token
+      const token = localStorage.getItem('token')
       await api.sendMessage(this.messageToSend, this.conversation._id, token)
       await this.refreshConversation(token)
       this.messageToSend = ''

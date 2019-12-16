@@ -41,11 +41,9 @@ export const mutations = {
   }
 }
 
-import api from '~/services/api'
-
 export const actions = {
   async login(context, payload) {
-    const userData = await api.login(payload.user)
+    const userData = payload.userData
 
     if (!userData.error) {
       context.commit('saveToken', userData)

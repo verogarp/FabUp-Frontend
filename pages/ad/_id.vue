@@ -94,7 +94,7 @@ export default {
       this.$router.push(`/conversation/${conversation._id}`)
     },
     async nameForEmail(email) {
-      const token = this.$store.getters.token
+      const token = localStorage.getItem('token')
       const user = await api.getUserByEmail(email, token)
       return user.name
     }

@@ -150,6 +150,7 @@ export default {
       }
 
       const newToken = await axios.post('auth/signup', user)
+      localStorage.setItem('token', newToken.token)
       if (!newToken.error) {
         this.$store.commit('saveToken', newToken.data)
         this.$router.push('/')
