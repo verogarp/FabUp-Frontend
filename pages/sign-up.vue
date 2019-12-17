@@ -148,13 +148,16 @@ export default {
         photo: this.file,
         location: this.location
       }
-
+      this.$store.commit('spinnerOn')
       const newToken = await axios.post('auth/signup', user)
       localStorage.setItem('token', newToken.token)
+
       if (!newToken.error) {
         this.$store.commit('saveToken', newToken.data)
         this.$router.push('/')
+        this.$store.commit('spinnerOff')
       } else {
+        this.$store.commit('spinnerOff')
         alert(newToken.error)
       }
     }

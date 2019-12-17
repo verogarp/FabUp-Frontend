@@ -81,7 +81,9 @@ export default {
   },
   async created() {
     const actualID = this.$route.params.id
+    this.$store.commit('spinnerOn')
     const ad = (await axios.get('/ads/' + actualID)).data
+    this.$store.commit('spinnerOff')
     this.ad = ad
     this.authorName = await this.nameForEmail(ad.author)
   },

@@ -5,7 +5,8 @@ export const state = () => ({
   email: '',
   ads: [],
   userLocation: '',
-  userPhoto: ''
+  userPhoto: '',
+  spinnerState: false
 })
 
 export const getters = {
@@ -20,6 +21,9 @@ export const getters = {
   },
   userPhoto(state) {
     return state.userPhoto
+  },
+  spinnerState(state) {
+    return state.spinnerState
   }
 }
 export const mutations = {
@@ -38,6 +42,12 @@ export const mutations = {
   },
   saveAds(state, ads) {
     state.ads = ads
+  },
+  spinnerOn(state) {
+    state.spinnerState = true
+  },
+  spinnerOff(state) {
+    state.spinnerState = false
   }
 }
 
