@@ -35,6 +35,7 @@
     "mongoose": "^5.7.13",
     "morgan": "^1.9.1",
     "nuxt": "^2.0.0",
+    "vue2-google-maps": "^0.10.7",
     "vuex-persistedstate": "^2.7.0"
   },
   "devDependencies": {

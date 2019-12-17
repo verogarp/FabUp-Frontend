@@ -72,9 +72,11 @@ export default {
         user_email: this.email,
         user_password: this.password
       }
+      this.$store.commit('spinnerOn')
       const userData = await api.login(user)
       await this.$store.dispatch('login', { userData })
       localStorage.setItem('token', userData.token)
+      this.$store.commit('spinnerOff')
 
       if (!userData.error) {
         this.$router.push('/')

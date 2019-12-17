@@ -146,7 +146,9 @@ export default {
           category: this.selectedCategory,
           author: this.$store.state.email
         }
+        this.$store.commit('spinnerOn')
         await axios.post('ads/create', ad)
+        this.$store.commit('spinnerOff')
         this.$router.push('/my-ads')
       } catch (e) {
         console.error(e.response.data.message)

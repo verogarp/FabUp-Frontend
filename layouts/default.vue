@@ -53,6 +53,15 @@
     </v-app-bar>
 
     <v-content>
+      <div v-if="spinnerState" class="spinner-overlay">
+        <v-progress-circular
+          :size="50"
+          color="primary"
+          indeterminate
+          absolute
+          class="mx-auto align-self-center"
+        ></v-progress-circular>
+      </div>
       <nuxt />
     </v-content>
   </v-app>
@@ -81,12 +90,13 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['token', 'userName', 'userPhoto'])
+    ...mapGetters(['token', 'userName', 'userPhoto', 'spinnerState'])
   },
   methods: {
     signOut() {
+      localStorage.removeItem('token')
       this.$store.commit('clearToken')
-      this.$router.push('/')
+      this.$router.push('/auth')
     }
   }
 }
@@ -95,5 +105,14 @@ export default {
 <style lang="scss" scoped>
 * {
   font-family: $fabup-text;
+}
+
+.spinner-overlay {
+  background-color: rgba(255, 255, 255, 0.65);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 99999;
 }
 </style>

@@ -7,6 +7,19 @@
         </v-col>
       </v-row>
 
+      <v-btn
+        fab
+        style="background: #f9a825"
+        to="/search-on-map"
+        absolute
+        bottom
+        right
+        fixed
+        class="mb-12"
+      >
+        <v-icon color="white">mdi-map-marker</v-icon>
+      </v-btn>
+
       <v-row align="center" justify="center" class="mx-0">
         <v-col cols="12">
           <v-overflow-btn
