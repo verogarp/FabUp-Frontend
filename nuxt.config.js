@@ -6,7 +6,8 @@ require('dotenv').config()
 module.exports = {
   mode: 'spa',
   env: {
-    API_URL: process.env.API_URL
+    API_URL: process.env.API_URL,
+    MAPS_API_KEY: process.env.MAPS_API_KEY
   },
   /*
    ** Headers of the page
