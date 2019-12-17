@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 const colors = require('vuetify/es5/util/colors').default
 require('dotenv').config()
+// require('~/node_modules/vue2-google-maps')
 
 module.exports = {
   mode: 'spa',
@@ -43,8 +44,8 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    { src: '~/plugins/localStorage.js', ssr: false }
-    // { src: '~/plugins/axios.js' }
+    { src: '~/plugins/localStorage.js', ssr: false },
+    { src: '~/plugins/gmaps.js' }
   ],
   /*
    ** Nuxt.js dev-modules
